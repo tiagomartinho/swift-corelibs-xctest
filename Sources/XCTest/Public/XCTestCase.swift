@@ -127,17 +127,7 @@ open class XCTestCase: XCTest {
     /// class.
     open class func tearDown() {}
 
-    open var continueAfterFailure: Bool {
-        get {
-            return true
-        }
-        set {
-            // TODO: When using the Objective-C runtime, XCTest is able to throw an exception from an assert and then catch it at the frame above the test method.
-            //      This enables the framework to effectively stop all execution in the current test.
-            //      There is no such facility in Swift. Until we figure out how to get a compatible behavior,
-            //      we have decided to hard-code the value of 'true' for continue after failure.
-        }
-    }
+    open var continueAfterFailure: Bool = true
 }
 
 /// Wrapper function allowing an array of static test case methods to fit
