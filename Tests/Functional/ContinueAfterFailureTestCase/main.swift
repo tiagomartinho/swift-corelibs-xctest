@@ -34,7 +34,7 @@ class ContinueAfterFailureTestCase: XCTestCase {
     
     // CHECK: Test Case 'ContinueAfterFailureTestCase.testDoesNotContinueAfterFailure' started at \d+-\d+-\d+ \d+:\d+:\d+\.\d+
     // CHECK: First assertion
-    // CHECK: .*/ContinueAfterFailureTestCase/main.swift:[[@LINE+6]]: error: ContinueAfterFailureTestCase.testDoesNotContinueAfterFailure : XCTAssertTrue failed -
+    // CHECK: .*/ContinueAfterFailureTestCase/main.swift:[[@LINE+5]]: error: ContinueAfterFailureTestCase.testDoesNotContinueAfterFailure : XCTAssertTrue failed -
     // CHECK: Test Case 'ContinueAfterFailureTestCase.testDoesNotContinueAfterFailure' failed \(\d+\.\d+ seconds\)
     func testDoesNotContinueAfterFailure() {
         continueAfterFailure = false
