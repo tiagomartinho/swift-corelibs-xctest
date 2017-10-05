@@ -15,15 +15,19 @@
 class ContinueAfterFailureTestCase: XCTestCase {
     static var allTests = {
         return [
-            ("test_fails", test_fails)
+            ("testContinueAfterFailure", testContinueAfterFailure)
         ]
     }()
     
-    // CHECK: Test Case 'ContinueAfterFailureTestCase.test_fails' started at \d+-\d+-\d+ \d+:\d+:\d+\.\d+
-    // CHECK: .*/ContinueAfterFailureTestCase/main.swift:[[@LINE+3]]: error: ContinueAfterFailureTestCase.test_fails : XCTAssertTrue failed -
-    // CHECK: Test Case 'ContinueAfterFailureTestCase.test_fails' failed \(\d+\.\d+ seconds\)
-    func test_fails() {
+    // CHECK: Test Case 'ContinueAfterFailureTestCase.testContinueAfterFailure' started at \d+-\d+-\d+ \d+:\d+:\d+\.\d+
+    // CHECK: First assertion
+    // CHECK: .*/ContinueAfterFailureTestCase/main.swift:[[@LINE+5]]: error: ContinueAfterFailureTestCase.testContinueAfterFailure : XCTAssertTrue failed -
+    // CHECK: Second assertion
+    // CHECK: Test Case 'ContinueAfterFailureTestCase.testContinueAfterFailure' failed \(\d+\.\d+ seconds\)
+    func testContinueAfterFailure() {
+        print("First assertion")
         XCTAssert(false)
+        print("Second assertion")
     }
 }
 // CHECK: Test Suite 'ContinueAfterFailureTestCase' failed at \d+-\d+-\d+ \d+:\d+:\d+\.\d+
