@@ -21,26 +21,26 @@ class ContinueAfterFailureTestCase: XCTestCase {
     }()
     
     // CHECK: Test Case 'ContinueAfterFailureTestCase.testDoesNotContinueAfterFailure' started at \d+-\d+-\d+ \d+:\d+:\d+\.\d+
-    // CHECK: First assertion
+    // CHECK: First Log in DoesNotContinueAfterFailure test
     // CHECK: .*/ContinueAfterFailureTestCase/main.swift:[[@LINE+5]]: error: ContinueAfterFailureTestCase.testDoesNotContinueAfterFailure : XCTAssertTrue failed -
     // CHECK: Test Case 'ContinueAfterFailureTestCase.testDoesNotContinueAfterFailure' failed \(\d+\.\d+ seconds\)
     func testDoesNotContinueAfterFailure() {
         continueAfterFailure = false
-        print("First assertion")
+        print("First Log in DoesNotContinueAfterFailure test")
         XCTAssert(false)
-        print("Second assertion")
+        print("Second Log in DoesNotContinueAfterFailure test")
     }
     
     // CHECK: Test Case 'ContinueAfterFailureTestCase.testContinueAfterFailure' started at \d+-\d+-\d+ \d+:\d+:\d+\.\d+
-    // CHECK: First assertion
+    // CHECK: First Log in ContinueAfterFailure test
     // CHECK: .*/ContinueAfterFailureTestCase/main.swift:[[@LINE+6]]: error: ContinueAfterFailureTestCase.testContinueAfterFailure : XCTAssertTrue failed -
-    // CHECK: Second assertion
+    // CHECK: Second Log in ContinueAfterFailure test
     // CHECK: Test Case 'ContinueAfterFailureTestCase.testContinueAfterFailure' failed \(\d+\.\d+ seconds\)
     func testContinueAfterFailure() {
         continueAfterFailure = true
-        print("First assertion")
+        print("First Log in ContinueAfterFailure test")
         XCTAssert(false)
-        print("Second assertion")
+        print("Second Log in ContinueAfterFailure test")
     }
 }
 // CHECK: Test Suite 'ContinueAfterFailureTestCase' failed at \d+-\d+-\d+ \d+:\d+:\d+\.\d+
